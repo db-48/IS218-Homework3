@@ -22,3 +22,8 @@ def test_add_calculation(setup_calculations):
 def test_get_history(setup_calculations):
     history = Calculations.get_history()
     assert len(history) == 2, "History does not contain the expected number of calculations"
+
+def test_clear_history(setup_calculations):
+    Calculations.clear_history()
+    assert len(Calculations.get_history()) == 0, "History was not cleared"
+
