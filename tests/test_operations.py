@@ -12,3 +12,7 @@ def test_operation_add():
 def test_operation_subtract():
     calculation = Calculation(Decimal('10'), Decimal('5'), subtract)
     assert calculation.perform() == Decimal('5'), "Subtract operation failed"
+
+def test_operation_multiply():
+    calculation = Calculation(Decimal('10'), Decimal('5'), multiply)
+    assert calculation.perform() == Decimal('50'), "Multiply operation failed"
