@@ -19,3 +19,6 @@ def test_add_calculation(setup_calculations):
     Calculations.add_calculation(calc)
     assert Calculations.get_latest() == calc, "Failed to add the calculation to the history"
 
+def test_get_history(setup_calculations):
+    history = Calculations.get_history()
+    assert len(history) == 2, "History does not contain the expected number of calculations"
