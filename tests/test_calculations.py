@@ -31,3 +31,8 @@ def test_get_latest(setup_calculations):
     latest = Calculations.get_latest()
     assert latest.a == Decimal('20') and latest.b == Decimal('3'), "Did not get the correct latest calculation"
 
+def test_find_by_operation(setup_calculations):
+    add_operations = Calculations.find_by_operation("add")
+    assert len(add_operations) == 1, "Did not find the correct number of calculations with add operation"
+    subtract_operations = Calculations.find_by_operation("subtract")
+    assert len(subtract_operations) == 1, "Did not find the correct number of calculations with subtract operation"
