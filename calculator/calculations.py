@@ -13,3 +13,7 @@ class Calculations:
     @classmethod
     def get_history(cls) -> List[Calculation]:
         return cls.history
+
+    @classmethod
+    def clear_history(cls):
+        cls.history.clear()
