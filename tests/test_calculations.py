@@ -27,3 +27,7 @@ def test_clear_history(setup_calculations):
     Calculations.clear_history()
     assert len(Calculations.get_history()) == 0, "History was not cleared"
 
+def test_get_latest(setup_calculations):
+    latest = Calculations.get_latest()
+    assert latest.a == Decimal('20') and latest.b == Decimal('3'), "Did not get the correct latest calculation"
+
