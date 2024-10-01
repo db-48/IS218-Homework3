@@ -21,9 +21,9 @@ class Calculator:
         return Calculator._perform_operation(a, b, subtract)
     
     @staticmethod
-    def multiply (a,b):
-        calculation = Calculation(a, b, multiply)  # Pass the multiply function from calculator.operations
-        return calculation.get_result()
+    def multiply(a: Decimal, b: Decimal) -> Decimal:
+        # Perform multiplication by delegating to the _perform_operation method with the multiply operation
+        return Calculator._perform_operation(a, b, multiply)
     
     @staticmethod
     def divide(a,b):
