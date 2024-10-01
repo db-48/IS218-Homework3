@@ -8,3 +8,7 @@ from calculator.operations import add, subtract, multiply, divide
 def test_operation_add():
     calculation = Calculation(Decimal('10'), Decimal('5'), add)
     assert calculation.perform() == Decimal('15'), "Add operation failed"
+
+def test_operation_subtract():
+    calculation = Calculation(Decimal('10'), Decimal('5'), subtract)
+    assert calculation.perform() == Decimal('5'), "Subtract operation failed"
