@@ -9,3 +9,7 @@ class Calculations:
     @classmethod
     def add_calculation(cls, calculation: Calculation):
         cls.history.append(calculation)
+
+    @classmethod
+    def get_history(cls) -> List[Calculation]:
+        return cls.history
