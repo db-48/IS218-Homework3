@@ -13,3 +13,9 @@ def setup_calculations():
     Calculations.clear_history()
     Calculations.add_calculation(Calculation(Decimal('10'), Decimal('5'), add))
     Calculations.add_calculation(Calculation(Decimal('20'), Decimal('3'), subtract))   
+
+def test_add_calculation(setup_calculations):
+    calc = Calculation(Decimal('2'), Decimal('2'), add)
+    Calculations.add_calculation(calc)
+    assert Calculations.get_latest() == calc, "Failed to add the calculation to the history"
+
