@@ -23,3 +23,7 @@ def test_calculation_repr():
     expected_repr = "Calculation(10, 5, add)" 
     assert calc.__repr__() == expected_repr, "The __repr__ method output does not match the expected string." 
 
+def test_divide_by_zero():
+    calc = Calculation(Decimal('10'), Decimal('0'), divide) 
+    with pytest.raises(ValueError, match="Cannot divide by zero"): 
+        calc.perform() 
