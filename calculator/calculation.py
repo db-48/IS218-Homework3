@@ -9,9 +9,12 @@ class Calculation:
         self.operation = operation 
 
 @staticmethod    
-    def create(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
+def create(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]):
         return Calculation(a, b, operation)
 
 
-    def perform(self) -> Decimal:
+def perform(self) -> Decimal:
         return self.operation(self.a, self.b)
+
+def __repr__(self):
+        return f"Calculation({self.a}, {self.b}, {self.operation.__name__})"
