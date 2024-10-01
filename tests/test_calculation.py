@@ -26,4 +26,5 @@ def test_calculation_repr():
 def test_divide_by_zero():
     calc = Calculation(Decimal('10'), Decimal('0'), divide) 
     with pytest.raises(ValueError, match="Cannot divide by zero"): 
-        calc.perform() 
+        calc.perform()
+         
