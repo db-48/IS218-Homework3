@@ -13,3 +13,7 @@ from calculator.operations import add, subtract, multiply, divide
     (Decimal('10.5'), Decimal('2'), multiply, Decimal('21.0')),  # Test multiplication with decimals
     (Decimal('10'), Decimal('0.5'), divide, Decimal('20')),  # Test division with decimals
 ])
+
+def test_calculation_operations(a, b, operation, expected):
+    calc = Calculation(a, b, operation) 
+    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a} and {b}" 
