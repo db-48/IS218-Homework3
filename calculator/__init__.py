@@ -17,9 +17,8 @@ class Calculator:
         return Calculator._perform_operation(a, b, add)
     
     @staticmethod
-    def subtract(a,b):
-        calculation = Calculation(a, b, subtract)  # Pass the subtract function from calculator.operations
-        return calculation.get_result()
+    def subtract(a: Decimal, b: Decimal) -> Decimal:
+        return Calculator._perform_operation(a, b, subtract)
     
     @staticmethod
     def multiply (a,b):
