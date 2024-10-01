@@ -1,5 +1,9 @@
-from calculator.calculation import Calculation
+from calculator.calculations import Calculations
 from calculator.operations import add, subtract, multiply, divide
+from calculator.calculation import Calculation
+from decimal import Decimal 
+from typing import Callable  
+
 
 class Calculator:
     @staticmethod
