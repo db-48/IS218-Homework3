@@ -7,6 +7,11 @@ from typing import Callable
 
 class Calculator:
     @staticmethod
+    def _perform_operation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
+        calculation = Calculation.create(a, b, operation)
+        Calculations.add_calculation(calculation)
+        return calculation.perform()
+    @staticmethod
     def add(a,b):
         calculation = Calculation(a, b, add)  # Pass the add function from calculator.operations
         return calculation.get_result()
