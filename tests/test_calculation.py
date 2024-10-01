@@ -17,3 +17,9 @@ from calculator.operations import add, subtract, multiply, divide
 def test_calculation_operations(a, b, operation, expected):
     calc = Calculation(a, b, operation) 
     assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a} and {b}" 
+
+def test_calculation_repr():
+    calc = Calculation(Decimal('10'), Decimal('5'), add) 
+    expected_repr = "Calculation(10, 5, add)" 
+    assert calc.__repr__() == expected_repr, "The __repr__ method output does not match the expected string." 
+
