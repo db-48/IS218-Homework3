@@ -36,3 +36,7 @@ def test_find_by_operation(setup_calculations):
     assert len(add_operations) == 1, "Did not find the correct number of calculations with add operation"
     subtract_operations = Calculations.find_by_operation("subtract")
     assert len(subtract_operations) == 1, "Did not find the correct number of calculations with subtract operation"
+
+def test_get_latest_with_empty_history():
+    Calculations.clear_history()
+    assert Calculations.get_latest() is None, "Expected None for latest calculation with empty history"
