@@ -5,7 +5,7 @@ from calculator.calculation import Calculation
 from calculator.operations import add, subtract, multiply, divide
 
 
-def test_operation_add():
+'''def test_operation_add():
     calculation = Calculation(Decimal('10'), Decimal('5'), add)
     assert calculation.perform() == Decimal('15'), "Add operation failed"
 
@@ -19,7 +19,11 @@ def test_operation_multiply():
 
 def test_operation_divide():
     calculation = Calculation(Decimal('10'), Decimal('5'), divide)
-    assert calculation.perform() == Decimal('2'), "Divide operation failed"
+    assert calculation.perform() == Decimal('2'), "Divide operation failed"'''
+
+def test_operation(a, b, operation, expected):
+    calculation = Calculation(a, b, operation)
+    assert calculation.perform() == expected, f"{operation.__name__} operation failed"
 
 def test_divide_by_zero():
     with pytest.raises(ValueError, match="Cannot divide by zero"):
